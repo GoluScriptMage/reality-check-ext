@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reality Check</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <header class="panel-header">
+        <div class="brand">
+          <img
+            class="brand-logo"
+            src="assets/icons/icon-48.png"
+            alt="Reality Check logo"
+          />
+          <div class="brand-copy">
+            <p class="kicker">Reality Check</p>
+            <h1 class="title">YouTube Focus Control</h1>
+          </div>
+        </div>
+        <p id="connection-text" class="connection">Checking active tab...</p>
+      </header>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>Status</h2>
+          <span id="status-pill" class="pill pill--idle">Idle</span>
+        </div>
+
+        <div class="row">
+          <span class="label">Reason</span>
+          <p id="status-reason" class="value">Not set yet</p>
+        </div>
+
+        <div class="grid">
+          <div class="row row--compact">
+            <span class="label">Interval</span>
+            <p id="status-interval" class="value">-</p>
+          </div>
+          <div class="row row--compact">
+            <span class="label">Next check-in</span>
+            <p id="status-next" class="value">-</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>Actions</h2>
+        </div>
+
+        <button id="start-button" class="button button--primary" type="button">
+          Start reminder setup
+        </button>
+
+        <div class="stop-box">
+          <label class="stop-label" for="stop-word"
+            >Type STOP to enable stop</label
+          >
+          <input
+            id="stop-word"
+            class="input"
+            type="text"
+            autocomplete="off"
+            placeholder="STOP"
+          />
+          <button
+            id="stop-button"
+            class="button button--ghost"
+            type="button"
+            disabled
+          >
+            Stop reminders
+          </button>
+        </div>
+
+        <button id="refresh-button" class="button button--subtle" type="button">
+          Refresh status
+        </button>
+
+        <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
