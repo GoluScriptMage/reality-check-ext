@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Reality Check",
+  "version": "1.0",
+  "description": "Reminds you why you opened YouTube",
+  "action": {
+    "default_title": "Reality Check",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon-16.png",
+      "32": "assets/icons/icon-32.png",
+      "48": "assets/icons/icon-48.png",
+      "128": "assets/icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "32": "assets/icons/icon-32.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["index.js"]
+    }
+  ]
+}

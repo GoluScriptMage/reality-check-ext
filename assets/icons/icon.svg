@@ -1,0 +1,27 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Reality Check logo">
+  <defs>
+    <linearGradient id="bg" x1="140" y1="84" x2="884" y2="940" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#123b53"/>
+    </linearGradient>
+    <radialGradient id="core" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(512 512) rotate(90) scale(292)">
+      <stop offset="0" stop-color="#34d399"/>
+      <stop offset="0.68" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </radialGradient>
+    <linearGradient id="glow" x1="276" y1="228" x2="744" y2="812" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#67e8f9" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#67e8f9" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="72" y="72" width="880" height="880" rx="224" fill="url(#bg)"/>
+  <circle cx="512" cy="512" r="324" fill="url(#glow)"/>
+  <circle cx="512" cy="512" r="292" fill="url(#core)"/>
+  <circle cx="512" cy="512" r="298" fill="none" stroke="#cffafe" stroke-opacity="0.75" stroke-width="20"/>
+
+  <path d="M356 540L470 650L692 406" fill="none" stroke="#f8fafc" stroke-width="104" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <circle cx="734" cy="304" r="54" fill="#f8fafc"/>
+  <circle cx="734" cy="304" r="24" fill="#0f172a"/>
+</svg>
