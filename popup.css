@@ -261,6 +261,17 @@ body {
   background: #f1f5f9;
 }
 
+.button--landing {
+  margin-top: 9px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.button--landing:hover {
+  background: #f8fafc;
+}
+
 .feedback {
   min-height: 16px;
   margin: 10px 0 0;

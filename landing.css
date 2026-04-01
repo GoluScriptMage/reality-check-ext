@@ -1,0 +1,721 @@
+:root {
+  --ink: #17120e;
+  --muted: #645b53;
+  --paper: #fffaf2;
+  --card: #fffdf8;
+  --line: #e7d9c7;
+  --accent: #d3562a;
+  --accent-deep: #9f3f1f;
+  --teal: #176f67;
+  --hero-glow: rgba(211, 86, 42, 0.18);
+  --shadow-soft: 0 18px 45px rgba(23, 18, 14, 0.08);
+  --shadow-card: 0 10px 25px rgba(23, 18, 14, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    linear-gradient(120deg, #fffaf2 0%, #fff2dd 55%, #ffead8 100%),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(23, 18, 14, 0.015) 0,
+      rgba(23, 18, 14, 0.015) 2px,
+      transparent 2px,
+      transparent 14px
+    );
+  min-height: 100vh;
+  line-height: 1.45;
+}
+
+.bg-aurora {
+  position: fixed;
+  inset: -20% -10% auto;
+  height: 480px;
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      var(--hero-glow),
+      rgba(211, 86, 42, 0) 45%
+    ),
+    radial-gradient(
+      circle at 75% 10%,
+      rgba(23, 111, 103, 0.16),
+      rgba(23, 111, 103, 0) 42%
+    );
+  pointer-events: none;
+  z-index: -1;
+  animation: drift 10s ease-in-out infinite alternate;
+}
+
+.site-header {
+  width: min(1080px, calc(100% - 2rem));
+  margin: 0.9rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid rgba(231, 217, 199, 0.9);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.86);
+  backdrop-filter: blur(5px);
+}
+
+.brand {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 1.1rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.site-nav {
+  display: flex;
+  gap: 0.85rem;
+}
+
+.site-nav a {
+  position: relative;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.2rem 0;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.12rem;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--teal));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.24s ease;
+}
+
+.site-nav a:hover {
+  color: var(--accent-deep);
+  transform: translateY(-1px);
+}
+
+.site-nav a:hover::after,
+.site-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.site-nav a:focus-visible {
+  outline: none;
+  color: var(--accent-deep);
+}
+
+main {
+  width: min(1080px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.7rem 0 3rem;
+}
+
+.section {
+  margin-top: 1.8rem;
+}
+
+.hero {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(255, 249, 240, 0.85)
+  );
+  box-shadow: var(--shadow-soft);
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  color: var(--teal);
+  font-size: 0.74rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+h1,
+h2 {
+  font-family: "Fraunces", "Times New Roman", serif;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  margin-top: 0.7rem;
+  font-size: clamp(1.7rem, 4.1vw, 2.9rem);
+  max-width: 17ch;
+}
+
+.lead {
+  margin-top: 0.7rem;
+  max-width: 56ch;
+  font-size: clamp(0.98rem, 1.8vw, 1.08rem);
+  color: var(--muted);
+}
+
+.hero-cta {
+  margin-top: 0.9rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.68rem 1.1rem;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(140deg, var(--accent), #e67b45);
+  box-shadow: 0 8px 22px rgba(211, 86, 42, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(140deg, var(--accent-deep), #ce6232);
+}
+
+.btn-ghost {
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid #decab3;
+}
+
+.btn-ghost:hover {
+  border-color: #c9af92;
+}
+
+.hero-points {
+  margin: 0.9rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  display: grid;
+  gap: 0.2rem;
+}
+
+.section-head {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.section-head h2 {
+  font-size: clamp(1.3rem, 2.8vw, 2rem);
+  max-width: 22ch;
+}
+
+.cards {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: var(--shadow-card);
+  padding: 0.9rem;
+}
+
+.card h3 {
+  font-size: 0.98rem;
+}
+
+.card p {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+}
+
+.shot-grid {
+  margin-top: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.shot-card {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow-card);
+}
+
+.mock-shot {
+  position: relative;
+  height: 248px;
+  border-bottom: 1px solid #ebddcb;
+  overflow: hidden;
+  background: linear-gradient(165deg, #13263d 0%, #081526 72%);
+}
+
+.mock-shot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.mock-video-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 28%, rgba(42, 180, 169, 0.28), transparent 40%),
+    radial-gradient(circle at 78% 20%, rgba(231, 120, 75, 0.28), transparent 42%),
+    radial-gradient(circle at 64% 82%, rgba(34, 74, 142, 0.4), transparent 52%),
+    linear-gradient(150deg, rgba(3, 11, 24, 0.5), rgba(6, 18, 30, 0.9));
+  filter: saturate(1.18) blur(0.2px);
+}
+
+.mock-float-note {
+  position: absolute;
+  left: 0.65rem;
+  top: 52%;
+  width: 76px;
+  height: 42px;
+  border-radius: 9px;
+  border: 1px solid rgba(197, 206, 226, 0.65);
+  background:
+    linear-gradient(155deg, rgba(111, 88, 226, 0.86), rgba(236, 95, 126, 0.86)),
+    rgba(255, 255, 255, 0.85);
+  box-shadow: 0 12px 24px rgba(3, 8, 20, 0.28);
+  transform: rotate(-2deg) translateY(-50%);
+}
+
+.mock-modal {
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  transform: translate(-50%, -50%);
+  width: min(86%, 430px);
+  border-radius: 15px;
+  border: 1px solid #d4e0ea;
+  background: linear-gradient(165deg, #f8fbfe, #f4f8fb);
+  box-shadow:
+    0 22px 48px rgba(2, 8, 17, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  padding: 0.78rem 0.82rem;
+}
+
+.mock-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  color: #128174;
+  font-size: 0.49rem;
+}
+
+.mock-title {
+  margin: 0.28rem 0 0;
+  font-weight: 800;
+  color: #16243a;
+  font-size: 0.98rem;
+  line-height: 1.2;
+}
+
+.mock-sub {
+  margin: 0.3rem 0 0;
+  color: #5e7284;
+  font-size: 0.67rem;
+}
+
+.mock-label {
+  margin-top: 0.38rem;
+  color: #2e455d;
+  font-weight: 700;
+  font-size: 0.63rem;
+}
+
+.mock-input {
+  margin-top: 0.32rem;
+  border-radius: 10px;
+  border: 1px solid #c5d4e2;
+  background: linear-gradient(160deg, #ffffff, #eef4f9);
+  height: 35px;
+}
+
+.mock-input-tall {
+  height: 56px;
+}
+
+.mock-input-mini {
+  width: 72px;
+  height: 32px;
+  margin-top: 0;
+}
+
+.mock-row {
+  margin-top: 0.42rem;
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+}
+
+.mock-actions {
+  justify-content: flex-end;
+  gap: 0.48rem;
+}
+
+.mock-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.36rem 0.62rem;
+  border-radius: 9px;
+  font-size: 0.63rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.mock-btn-fill {
+  color: #fff;
+  background: linear-gradient(145deg, #0f9885, #17897b);
+  box-shadow: 0 8px 18px rgba(15, 152, 133, 0.33);
+}
+
+.mock-btn-soft {
+  color: #33475d;
+  background: #eaf1f6;
+  border: 1px solid #d3dfeb;
+}
+
+.mock-btn.full {
+  width: 100%;
+}
+
+.mock-goal .mock-modal,
+.mock-interval .mock-modal,
+.mock-reminder .mock-modal {
+  width: min(85%, 426px);
+}
+
+.mock-popup {
+  background: linear-gradient(165deg, #111d30 0%, #0a1525 72%);
+}
+
+.mock-device {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 154px;
+  height: 222px;
+  border-radius: 24px;
+  border: 1px solid rgba(254, 255, 255, 0.45);
+  background: linear-gradient(170deg, #eaf7fb, #d8eaf1);
+  box-shadow: 0 15px 30px rgba(5, 12, 23, 0.42);
+  padding: 0.42rem;
+  display: grid;
+  gap: 0.36rem;
+}
+
+.mock-pane {
+  border: 1px solid #c9dae5;
+  border-radius: 11px;
+  background: #f8fcff;
+  padding: 0.38rem;
+}
+
+.mock-pane-header .mock-kicker {
+  font-size: 0.39rem;
+}
+
+.mock-pane-header .mock-title {
+  font-size: 0.68rem;
+  margin-top: 0.17rem;
+}
+
+.mock-chip {
+  margin-top: 0.22rem;
+  display: inline-block;
+  padding: 0.1rem 0.35rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.48rem;
+  color: #0d786b;
+  background: #cbf0e3;
+}
+
+.mock-stat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem;
+}
+
+.mock-stat {
+  height: 20px;
+  border-radius: 6px;
+  background: linear-gradient(165deg, #e7f0f7, #dbe8f2);
+  border: 1px solid #cad9e6;
+}
+
+.mock-line {
+  margin-top: 0.25rem;
+  height: 6px;
+  border-radius: 99px;
+  background: #cddaea;
+}
+
+.mock-line.short {
+  width: 66%;
+}
+
+.mock-popup .mock-input {
+  height: 20px;
+  margin-top: 0.24rem;
+}
+
+.mock-popup .mock-btn {
+  margin-top: 0.24rem;
+  font-size: 0.53rem;
+  border-radius: 7px;
+  padding: 0.23rem 0.4rem;
+}
+
+.mock-reminder .mock-modal.compact {
+  width: min(83%, 420px);
+}
+
+.shot-card figcaption {
+  padding: 0.6rem 0.75rem 0.75rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #3f342c;
+}
+
+.section-compact {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 253, 249, 0.9);
+  padding: 1rem;
+}
+
+.compact-copy {
+  margin: 0.5rem 0 0;
+  max-width: 65ch;
+  color: #564c43;
+  font-weight: 600;
+}
+
+.site-footer {
+  width: min(1080px, calc(100% - 2rem));
+  margin: 0 auto 2rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0;
+  color: #5f554c;
+  font-weight: 600;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes drift {
+  from {
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    transform: translateY(12px) scale(1.02);
+  }
+}
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .shot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .bg-aurora {
+    height: 330px;
+  }
+
+  .site-header {
+    border-radius: 14px;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.56rem 0.75rem;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .brand {
+    font-size: 1rem;
+  }
+
+  main {
+    padding-top: 1.05rem;
+    padding-bottom: 2.2rem;
+  }
+
+  .hero {
+    border-radius: 18px;
+    padding: 1rem;
+  }
+
+  .hero-points {
+    padding-left: 1rem;
+    margin-top: 0.75rem;
+    font-size: 0.92rem;
+  }
+
+  .section {
+    margin-top: 1.15rem;
+  }
+
+  .card {
+    padding: 0.8rem;
+  }
+
+  .mock-shot {
+    height: 198px;
+  }
+
+  .mock-float-note {
+    width: 60px;
+    height: 34px;
+    border-radius: 8px;
+  }
+
+  .mock-modal {
+    padding: 0.58rem 0.62rem;
+    border-radius: 13px;
+  }
+
+  .mock-title {
+    font-size: 0.79rem;
+  }
+
+  .mock-sub,
+  .mock-label,
+  .mock-kicker {
+    font-size: 0.56rem;
+  }
+
+  .mock-input {
+    height: 26px;
+    border-radius: 8px;
+  }
+
+  .mock-input-tall {
+    height: 42px;
+  }
+
+  .mock-input-mini {
+    width: 54px;
+    height: 24px;
+  }
+
+  .mock-btn {
+    font-size: 0.55rem;
+    padding: 0.23rem 0.42rem;
+    border-radius: 7px;
+  }
+
+  .mock-device {
+    width: 138px;
+    height: 190px;
+    border-radius: 20px;
+  }
+
+  .mock-pane {
+    padding: 0.3rem;
+    border-radius: 9px;
+  }
+
+  .mock-pane-header .mock-title {
+    font-size: 0.61rem;
+  }
+
+  .mock-popup .mock-btn {
+    font-size: 0.48rem;
+  }
+
+  .mock-chip {
+    font-size: 0.43rem;
+  }
+
+  .shot-card figcaption {
+    font-size: 0.84rem;
+    padding: 0.52rem 0.62rem 0.64rem;
+  }
+
+  .section-compact {
+    padding: 0.85rem;
+  }
+
+  .compact-copy {
+    font-size: 0.95rem;
+  }
+}

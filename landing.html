@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Reality Check helps you stay intentional on YouTube with gentle reminders based on your goal."
+    />
+    <title>Reality Check | Stay Intentional on YouTube</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="landing.css" />
+  </head>
+  <body>
+    <div class="bg-aurora" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top">Reality Check</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#flow">Flow</a>
+        <a href="#screens">Screens</a>
+        <a href="#start">Use it</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section reveal">
+        <p class="eyebrow">YouTube focus extension</p>
+        <h1>Stop drifting. Watch with intention.</h1>
+        <p class="lead">
+          Reality Check asks your reason before watching, then gently checks in
+          so you stay on track.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#screens">See real screens</a>
+          <a class="btn btn-ghost" href="#flow">How it works</a>
+        </div>
+
+        <ul class="hero-points" aria-label="Highlights">
+          <li>10-second setup</li>
+          <li>Custom reminder interval</li>
+          <li>Intentional stop flow</li>
+        </ul>
+      </section>
+
+      <section id="flow" class="section reveal">
+        <div class="section-head">
+          <p class="eyebrow">Flow</p>
+          <h2>Three quick steps</h2>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>1. Set your reason</h3>
+            <p>Write one clear purpose before you start.</p>
+          </article>
+
+          <article class="card">
+            <h3>2. Pick interval</h3>
+            <p>Choose how often Reality Check should prompt you.</p>
+          </article>
+
+          <article class="card">
+            <h3>3. Respond and reset</h3>
+            <p>Keep going with intention, or stop with one action.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="screens" class="section reveal">
+        <div class="section-head">
+          <p class="eyebrow">Real app screens</p>
+          <h2>What using it actually looks like</h2>
+        </div>
+
+        <div class="shot-grid">
+          <figure class="shot-card">
+            <div class="mock-shot mock-goal" role="img" aria-label="Goal prompt asking what brought you to YouTube">
+              <div class="mock-video-bg"></div>
+              <div class="mock-float-note"></div>
+              <div class="mock-modal">
+                <p class="mock-kicker">Reality Check</p>
+                <p class="mock-title">What brought you to YouTube?</p>
+                <p class="mock-sub">Set one clear reason before watching.</p>
+                <div class="mock-label">Your reason</div>
+                <div class="mock-input mock-input-tall"></div>
+                <div class="mock-btn mock-btn-fill">Next</div>
+              </div>
+            </div>
+            <figcaption>Set your reason</figcaption>
+          </figure>
+
+          <figure class="shot-card">
+            <div class="mock-shot mock-interval" role="img" aria-label="Reminder interval setup screen">
+              <div class="mock-video-bg"></div>
+              <div class="mock-modal">
+                <p class="mock-kicker">Reality Check</p>
+                <p class="mock-title">How often should I remind you?</p>
+                <p class="mock-sub">Your reason: To find the solutions of something</p>
+                <div class="mock-label">Reminder interval</div>
+                <div class="mock-row">
+                  <div class="mock-input mock-input-mini"></div>
+                  <div class="mock-sub">minutes</div>
+                </div>
+                <div class="mock-row mock-actions">
+                  <div class="mock-btn mock-btn-soft">Back</div>
+                  <div class="mock-btn mock-btn-fill">Start reminders</div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Choose reminder interval</figcaption>
+          </figure>
+
+          <figure class="shot-card">
+            <div class="mock-shot mock-popup" role="img" aria-label="Popup showing running reminder status">
+              <div class="mock-device">
+                <div class="mock-pane mock-pane-header">
+                  <p class="mock-kicker">Reality Check</p>
+                  <p class="mock-title">YouTube Focus Control</p>
+                  <div class="mock-chip">Running</div>
+                </div>
+                <div class="mock-pane">
+                  <div class="mock-stat-row">
+                    <div class="mock-stat"></div>
+                    <div class="mock-stat"></div>
+                  </div>
+                  <div class="mock-line"></div>
+                  <div class="mock-line short"></div>
+                </div>
+                <div class="mock-pane">
+                  <div class="mock-btn mock-btn-fill full">Start reminder setup</div>
+                  <div class="mock-input"></div>
+                  <div class="mock-btn mock-btn-soft full">Stop reminders</div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Track session status</figcaption>
+          </figure>
+
+          <figure class="shot-card">
+            <div class="mock-shot mock-reminder" role="img" aria-label="Reminder modal asking if you are still on task">
+              <div class="mock-video-bg"></div>
+              <div class="mock-float-note"></div>
+              <div class="mock-modal compact">
+                <p class="mock-kicker">Reminder</p>
+                <p class="mock-title">Are you doing what you came for?</p>
+                <p class="mock-sub">Reason: To find the solutions of something</p>
+                <div class="mock-row mock-actions">
+                  <div class="mock-btn mock-btn-soft">Stop reminding me</div>
+                  <div class="mock-btn mock-btn-fill">Continue reminding me</div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Get a timely check-in</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="start" class="section section-compact reveal">
+        <p class="eyebrow">Use it effectively</p>
+        <p class="compact-copy">
+          Be specific with your reason, use a 10-15 minute interval, and answer
+          each check-in honestly.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer reveal">
+      <p>Reality Check | Focus first. Scroll second.</p>
+    </footer>
+
+    <script src="landing.js"></script>
+  </body>
+</html>
