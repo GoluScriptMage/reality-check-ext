@@ -1,4 +1,4 @@
-# Reality Check
+# Reality Check made by golu.v2
 
 Reality Check is a Chrome extension that helps you use YouTube more intentionally. It asks why you opened YouTube, sets a reminder interval, and then checks back in so you can stay aligned with your goal.
 
